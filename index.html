@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Simple 家計簿</title>
-<meta name="description" content="手元で使えるお金と、今月あといくら使えるかが、ひと目で分かる iPhone の家計簿アプリ。カードの引き落とし、固定費、サブスクまで。">
+<meta name="description" content="手元で使えるお金と、今月あといくら使えるかが、ひと目で分かる iPhone の家計簿アプリ。カードの引き落とし、毎月の支払い、サブスクまで。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
 <style>
 /* レイアウト: 白地に大きな見出し、左右に文章とスマホを交互に置く。中身の幅は最大 1080px */
@@ -193,12 +193,12 @@ details p { margin-top: 10px; color: var(--sub); }
   <div class="text">
     <p class="eyebrow">手元で使えるお金</p>
     <h2>残高だけでは、<br>使えるお金は分からない。</h2>
-    <p>カードで払った分は、あとで口座から引かれます。家賃や光熱費も、月末までに出ていきます。The Simple は、それを全部引いた額を「手元で使えるお金」として出します。</p>
+    <p>カードで払った分は、あとで口座から引かれます。家賃や光熱費などの毎月の支払いも、月末までに出ていきます。The Simple は、それを全部引いた額を「手元で使えるお金」として出します。</p>
     <div class="formula" aria-label="計算のしかた">
-      <span>口座・現金</span><b>−</b><span>カードの未払い</span><b>−</b><span>貯金の取り分け</span><b>−</b><span>今月これから払う固定費</span><b>=</b><span class="ans">手元で使えるお金</span>
+      <span>口座・現金</span><b>−</b><span>カードの未払い</span><b>−</b><span>貯金の取り分け</span><b>−</b><span>今月これからの毎月の支払い</span><b>=</b><span class="ans">手元で使えるお金</span>
     </div>
     <ul class="points">
-      <li>資産の画面では、この引き算を1行ずつ見られます。足りなくなりそうなときは赤で知らせます。</li>
+      <li>資産の画面では、この引き算を1行ずつ見られます。押すと、貯金や毎月の支払いのページへ。足りなくなりそうなときは赤で知らせます。</li>
       <li>持っているお金からカードの未払いを引いた「純資産」も、内訳つきで。</li>
     </ul>
   </div>
@@ -211,11 +211,11 @@ details p { margin-top: 10px; color: var(--sub); }
     <h2>今月あといくら。<br>今日あといくら。</h2>
     <p>1か月の予算を決めると、ホームのいちばん上に「今月あと使える額」と、残りを日割りした額を出します。今日の支出の画面では、今日の目安に対していくら使ったかが分かります。</p>
     <ul class="points">
-      <li>横にスワイプで先週へ。日ごとの一覧では、目安を守れた日・超えた日を数えます。</li>
+      <li>週の棒グラフは、横にスワイプで先週へ。今月、目安を守れた日・超えた日も数えます。</li>
       <li>予算は変動費・固定費・特別費に分けて。カテゴリーごとの予算と、月ごとの繰り越しもできます(PRO)。</li>
     </ul>
   </div>
-  <div class="shots"><div class="phone "><img src="img/today.webp" alt="今日の支出の画面" loading="lazy" width="560" height="1212"></div><div class="phone sm"><img src="img/daily.webp" alt="日ごとの支出" loading="lazy" width="560" height="1212"></div></div>
+  <div class="shots"><div class="phone "><img src="img/today.webp" alt="今日の支出の画面" loading="lazy" width="560" height="1212"></div></div>
 </div></section>
 
 <section class="feature" id="cards"><div class="wrap row">
@@ -224,8 +224,9 @@ details p { margin-top: 10px; color: var(--sub); }
     <h2>いつ、どの口座から、<br>いくら引かれるか。</h2>
     <p>締め日と引き落とし日を入れておくと、使った分を請求ごとにまとめます。金額が決まった請求は「確定」、締め前は「集計中」。引き落とし日には、口座からの支払いとして自動で記録します。</p>
     <ul class="points">
+      <li>分割払い・リボ払いは、その回に払う額で請求にまとめます。</li>
+      <li>「請求額の確認」で明細と見比べて、違ったらその場で直せます。</li>
       <li>口座が足りなくなりそうなときは、前もって知らせます。</li>
-      <li>明細と違ったら、その場で直せます。</li>
     </ul>
   </div>
   <div class="shots"><div class="phone "><img src="img/cards.webp" alt="カードの画面" loading="lazy" width="560" height="1212"></div></div>
@@ -237,8 +238,9 @@ details p { margin-top: 10px; color: var(--sub); }
     <h2>いつものは、<br>押すだけ。</h2>
     <p>よく使うお店とカテゴリーと支払い方法の組み合わせを、入力の画面のいちばん上に出します。押せば「いつもの金額」が入った状態で、あとは保存するだけ。</p>
     <ul class="points">
-      <li>前の記録から「同じ内容でもう一度入力」。</li>
-      <li>チャージや口座間の送金は、支出に入れずに記録。</li>
+      <li>レシートは、カメラを向けるだけで合計・日付・お店を読み取ります。</li>
+      <li>Apple Pay や Suica・PASMO で払ったときは、ショートカットを一度作っておけば、アプリを開かずに記録できます。</li>
+      <li>前の記録から「同じ内容でもう一度入力」。チャージや口座間の送金は、支出に入れずに記録。</li>
     </ul>
   </div>
   <div class="shots"><div class="phone "><img src="img/in_cat.webp" alt="入力の画面。よく使う組み合わせ" loading="lazy" width="560" height="1212"></div><div class="phone sm"><img src="img/in_amount.webp" alt="金額の画面。いつもの金額" loading="lazy" width="560" height="1212"></div></div>
@@ -259,11 +261,12 @@ details p { margin-top: 10px; color: var(--sub); }
 
 <section class="feature flip" id="calendar"><div class="wrap row">
   <div class="text">
-    <p class="eyebrow">カレンダーと検索</p>
+    <p class="eyebrow">収支</p>
     <h2>あとから見返すのも、<br>かんたんに。</h2>
-    <p>日ごとの支出と収入、6か月の比較、カテゴリーの円グラフ。円グラフは支出・分類・収入を切り替えられて、カテゴリーごとに先月との差と予算の残りが出ます。</p>
+    <p>下のタブの「収支」で、カレンダー・グラフ・カテゴリーを左右にめくって見られます。グラフは毎月の収支と、予算のペース(1日の平均や、先月の同じ日までとの比較)。カテゴリーの円グラフでは、先月との差と予算の残りが出ます。</p>
     <ul class="points">
-      <li>記録を探すときは、期間・カテゴリー・支払い方法・金額で絞り込めます。</li>
+      <li>カレンダーの下の一覧は、引き上げると全画面に。その月の中を探したり、支出・収入ごとに絞り込んだりできます。</li>
+      <li>すべての月から探すときは、期間・カテゴリー・支払い方法・金額で絞り込めます。</li>
       <li>月の始まりを給料日に合わせられます(1〜28日)。</li>
     </ul>
   </div>
@@ -279,11 +282,21 @@ details p { margin-top: 10px; color: var(--sub); }
   <div class="shots"><div class="phone "><img src="img/savings.webp" alt="貯金の画面" loading="lazy" width="560" height="1212"></div></div>
 </div></section>
 
+<section class="feature" id="share"><div class="wrap">
+  <p class="eyebrow">ふたりで使う</p>
+  <h2 style="margin-top:12px">同じ家計簿に、<br>ふたりで記録。</h2>
+  <p class="lead" style="margin-top:16px">家計簿を iCloud で共有すると、家族やパートナーと同じ家計簿に記録できます。誰が払ったかを残して、精算もアプリの中で。招待された人は、無料のままで参加できます。</p>
+  <ul class="points" style="margin-top:20px">
+    <li>自分だけの家計簿と、ふたりの家計簿を分けて持てます。入力のときに、どの家計簿に入れるかを選べます。</li>
+    <li>家計簿を増やして共有するのは PRO の機能です。</li>
+  </ul>
+</div></section>
+
 <section class="feature flip" id="auto"><div class="wrap row">
   <div class="text">
     <p class="eyebrow">自動で記録</p>
     <h2>毎月のお金は、<br>一度入れたら終わり。</h2>
-    <p>家賃・光熱費・スマホ代などの固定費、給料、サブスクは、決まった日に自動で記録します。支払いと収入はタブで切り替えて、ひとつの画面で確かめられます。サブスクは Netflix や ChatGPT など、よく使うものをプランから選べます。</p>
+    <p>家賃・光熱費・スマホ代などの毎月の支払い、給料、サブスクは、決まった日に自動で記録します。支払いと収入はタブで切り替えて、ひとつの画面で確かめられます。サブスクは Netflix や ChatGPT など、よく使うものをプランから選べます。</p>
   </div>
   <div class="shots"><div class="phone "><img src="img/recurring.webp" alt="毎月の支払い・収入の画面" loading="lazy" width="560" height="1212"></div><div class="phone sm"><img src="img/subs.webp" alt="サブスクの画面" loading="lazy" width="560" height="1212"></div></div>
 </div></section>
@@ -316,7 +329,7 @@ details p { margin-top: 10px; color: var(--sub); }
   <div class="trio">
     <div class="tile">
       <h3>銀行とつながらない</h3>
-      <p>口座のパスワードを預けることはありません。記録は iPhone の中に保存します。バックアップのファイルを書き出して、機種変更のときに戻せます。</p>
+      <p>口座のパスワードを預けることはありません。記録は iPhone の中と、あなたの iCloud にだけ保存し、運営者のサーバーには送りません。毎日の自動バックアップも iCloud に残るので、機種変更のときも戻せます。</p>
     </div>
     <div class="tile">
       <h3>パスコードと Face ID</h3>
@@ -340,11 +353,14 @@ details p { margin-top: 10px; color: var(--sub); }
       <h3>無料</h3>
       <p class="amount">¥0</p>
       <ul>
-        <li><span class="m">✓</span>入力・予算・カレンダー・貯金</li>
+        <li><span class="m">✓</span>入力・予算・収支(カレンダー・グラフ)・貯金</li>
         <li><span class="m">✓</span>手元で使えるお金・純資産・今日の目安</li>
         <li><span class="m">✓</span>カード・口座の登録、引き落としの予定</li>
-        <li><span class="m">✓</span>固定費・給料・サブスクの自動記録</li>
-        <li><span class="m">✓</span>ほかのアプリからの引き継ぎ・バックアップ</li>
+        <li><span class="m">✓</span>毎月の支払い・給料・サブスクの自動記録</li>
+        <li><span class="m">✓</span>レシートの読み取り、Apple Pay・Suica からの記録</li>
+        <li><span class="m">✓</span>毎日の自動バックアップ(iCloud)</li>
+        <li><span class="m">✓</span>ほかのアプリからの引き継ぎ</li>
+        <li><span class="m">✓</span>共有された家計簿に参加</li>
         <li><span class="m">✓</span>券面を色と名前で作る</li>
         <li class="no"><span class="m">—</span>広告が出ます</li>
       </ul>
@@ -359,7 +375,9 @@ details p { margin-top: 10px; color: var(--sub); }
         <li><span class="m">✓</span>ホームを自分好みに並べる</li>
         <li><span class="m">✓</span>カテゴリーごとの予算・予算の繰り越し</li>
         <li><span class="m">✓</span>家計簿を増やす・ふたりで使って精算</li>
-        <li><span class="m">✓</span>PDF・CSV で書き出す、アプリの色を変える</li>
+        <li><span class="m">✓</span>iPhone・iPad・Mac で同期</li>
+        <li><span class="m">✓</span>バックアップ・PDF・CSV で書き出す</li>
+        <li><span class="m">✓</span>アプリの色を変える</li>
       </ul>
     </div>
   </div>
