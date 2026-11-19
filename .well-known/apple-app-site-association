@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["R2S2SQMEBB.com.TheSimple.Kakeibo"],
+        "components": [{ "/": "/join*", "comment": "家計簿の共有の招待" }]
+      }
+    ]
+  }
+}
